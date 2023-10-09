@@ -2,7 +2,7 @@
 -define(VERNEMQ_DEV_HRL, true).
 -define(true, 1).
 -define(false, 0).
--define map().
+-type map() :: map().
 -type peer()                :: {inet:ip_address(), inet:port_number()}.
 -type username()            :: binary() | undefined.
 -type password()            :: binary() | undefined.
