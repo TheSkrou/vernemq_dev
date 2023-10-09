@@ -18,10 +18,11 @@
           p_user_property => nonempty_list(user_property())
          }.
 
--type sub_modifiers() ::
-        #{
-          %% Change the topics which will be subscribed.
-          topics => [{Topic :: topic(), SubInfo :: subinfo()}]
-         }.
+-type sub_modifiers() :: #{mountpoint => mountpoint(),
+                           max_message_size => non_neg_integer()}.
+
+-type sub_properties() :: #{p_session_expiry_interval => seconds(),
+                            p_receive_max => non_neg_integer()}.
+
 
 -export_type([sub_modifiers/0, sub_properties/0]).

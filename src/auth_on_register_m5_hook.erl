@@ -9,7 +9,14 @@
                               UserName      :: username(),
                               Password      :: password(),
                               CleanStart    :: flag(),
-                              Properties    :: reg_properties()) ->
+                              Properties    :: #{p_session_expiry_interval => seconds(),
+                                                 p_receive_max => 1..65535,
+                                                 p_topic_alias_max => 1..65535,
+                                                 p_max_packet_size => 1..4294967296,
+                                                 p_request_response_info => boolean(),
+                                                 p_request_problem_info => boolean(),
+                                                 p_user_property => nonempty_list(user_property())}) ->
+
     ok |
     {ok, reg_modifiers()} |
     {error, #{reason_code => err_reason_code_name()}} |
